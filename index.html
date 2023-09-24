@@ -9,13 +9,14 @@
     <script src="app.js"></script>
 </head>
 <body>
-    <input type="button" value="おみくじを引く！" onclick="omikuji();" id="playBtn">
+    <!-- <input type="button" value="おみくじを引く！" onclick="omikuji();" id="playBtn">
     <div>
         <div id="msgHeading" style="opacity: 0;">おみくじの結果は........</div>
         <div id="msg1"></div>
         <div id="msg2"></div>
     </div>
-    <input type="button" value="リセット！" id="resetBtn" onclick="reset();" disabled="disabled">
+    <input type="button" value="リセット！" id="resetBtn" onclick="reset();" disabled="disabled"> -->
+    <input type="button" value="ウィンドウを開く" id="resetBtn" onclick="openWindow();" disabled="disabled">
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener("load", function() {
