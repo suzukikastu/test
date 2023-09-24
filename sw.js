@@ -22,6 +22,18 @@ self.addEventListener('fetch', function(event) {
     );
 });
 
+if (self.Notification.permission === "granted") {
+    const notificationObject = {
+      body: "ここをクリックしてメッセージを表示してください。",
+      //data: { url: `${self.location.origin}/some/path` },
+      data: { url: 'https://www.winbird-gp.co.jp' },
+    };
+    self.registration.showNotification(
+      "メッセージがあります！",
+      notificationObject,
+    );
+  }
+
 // サービスワーカーの 'push' イベントで通知を処理する
 self.addEventListener('push', function(event) {
     // プッシュ通知データから表示するメッセージを取得
