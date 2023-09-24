@@ -21,3 +21,27 @@ self.addEventListener('fetch', function(event) {
         })
     );
 });
+
+// サービスワーカーの 'push' イベントで通知を処理する
+self.addEventListener('push', function(event) {
+    // プッシュ通知データから表示するメッセージを取得
+    var message = event.data.text();
+  
+    // プッシュ通知を表示する
+    event.waitUntil(
+      self.registration.showNotification('新しい通知', {
+        body: message,
+        icon: 'images/icon-512.png'
+      })
+    );
+  });
+  
+  // 通知がクリックされた時の処理
+  self.addEventListener('notificationclick', function(event) {
+    event.notification.close();
+    
+    // ブラウザを開く
+    event.waitUntil(
+      clients.openWindow('https://www.winbird-gp.co.jp')
+    );
+  });

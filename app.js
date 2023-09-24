@@ -50,11 +50,11 @@ function reset() {
 function openWindow(){
   window.open('https://www.winbird-gp.co.jp', '_blank');
   console.log("pwaのテスト")
-  chrome.windows.create({
-      url: 'https://www.winbird-gp.co.jp/',
-      type: 'popup',
-      state: 'normal'
-    }, function(window) {
-      console.log('新しいウィンドウが作成されました:', window);
-    });
+  // chrome.windows.create({
+  //     url: 'https://www.winbird-gp.co.jp/',
+  //     type: 'popup',
+  //     state: 'normal'
+  //   }, function(window) {
+  //     console.log('新しいウィンドウが作成されました:', window);
+  //   });
 }
