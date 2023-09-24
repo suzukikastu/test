@@ -11,7 +11,7 @@ self.addEventListener('install', function(event) {
             return cache.addAll(urlsToCache);
         })
     );
-    if (self.Notification.permission === "granted") {
+    // if (self.Notification.permission === "granted") {
         const notificationObject = {
           body: "ここをクリックしてメッセージを表示してください。",
           //data: { url: `${self.location.origin}/some/path` },
@@ -21,7 +21,7 @@ self.addEventListener('install', function(event) {
           "メッセージがあります！",
           notificationObject,
         );
-      }
+    //   }
 });
 
 self.addEventListener('fetch', function(event) {
